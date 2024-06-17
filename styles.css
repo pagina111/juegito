@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #87CEEB;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('ciudad.jpg') repeat-x;
+    background-size: cover;
+    animation: moveBackground 10s linear infinite;
+}
+
+#helloKitty {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-image: url('kitty.png'); /* Imagen de Hello Kitty */
+    background-size: cover;
+}
+
+#obstacle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('car.png'); /* Imagen del carro */
+    background-size: cover;
+    animation: moveObstacle 2s linear infinite;
+}
+
+#scoreBoard, #levelBoard {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: #F08080;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#scoreBoard {
+    left: 10px;
+}
+
+#levelBoard {
+    right: 10px;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -50px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+.jump {
+    animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 100px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
